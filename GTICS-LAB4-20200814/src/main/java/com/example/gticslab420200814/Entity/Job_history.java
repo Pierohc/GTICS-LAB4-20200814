@@ -14,7 +14,7 @@ import lombok.Setter;
 @Entity
 @Table(name="job_history")
 public class Job_history {
-
+    /*
     @Id
     @Column(name="job_history_id")
     private Integer job_history_id;
@@ -22,7 +22,7 @@ public class Job_history {
     @Id
     @Column(name="start_date")
     private Date start_date;
-
+*/
 
     @EmbeddedId
     private Job_history_id id;
