@@ -7,13 +7,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 @Getter
 @Setter
 @Embeddable
 public class Job_history_id implements Serializable {
 
-    @Column
+    @Column(name="employee_id")
     private Integer employee_id;
+
 
 }

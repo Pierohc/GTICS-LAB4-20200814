@@ -4,6 +4,8 @@ package com.example.gticslab420200814.Entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.Date;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,14 +16,23 @@ import lombok.Setter;
 public class Job_history {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer job_history;
-    
-    @EmbeddedId
-    private Job_history_id id_employee;
+    @Column(name="job_history_id")
+    private Integer job_history_id;
 
-    @Column
-    private LocalDate start_date;
+    @Id
+    @Column(name="start_date")
+    private Date start_date;
+
+
+    @EmbeddedId
+    private Job_history_id id;
+
+    @MapsId("employee_id")
+    @ManyToOne
+    @JoinColumn(name="employee_id")
+    private Employees employee_id;
+
+
     @Column
     private LocalDate end_date;
     @ManyToOne
